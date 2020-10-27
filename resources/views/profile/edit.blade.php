@@ -5,7 +5,7 @@
         'title' => __('Hello') . ' '. auth()->user()->name,
         'description' => __('This is your profile page. You can see the progress you\'ve made with your work and manage your projects or assigned tasks'),
         'class' => 'col-lg-7'
-    ])   
+    ])
 
 <div class="container-fluid mt--7">
     <div class="row">
@@ -14,8 +14,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
-                            @if(auth()->user()->profile != NULL)
-                                <img src="{{ asset('storage') }}/profile/{{ auth()->user()->profile }}" class="rounded-circle">
+                            @if(auth()->user()->avatar != NULL)
+                                <img src="{{ auth()->user()->avatar }}" class="rounded-circle">
                             @else
                             <a href="#">
                                 <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" class="rounded-circle">
@@ -35,7 +35,7 @@
                                 <form action="{{ route('profile_update') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="file" name="filename" class="form-control form-control-alternative">
+                                        <input type="file" name="filename" class="form-control form-control-alternative" required>
                                     </div>
                                     <div class="text-center">
                                         <input type="submit" class="btn btn-sm btn-info mr-4" value="Change Photo">
@@ -44,11 +44,37 @@
                             </div>
                         </div>
                     </div>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+                                <span class="alert-text">Image Error!</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+                        <span class="alert-text">Profile Photo Updated</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    @if(session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <span class="alert-icon"><i class="ni ni-fat-remove"></i></span>
+                        <span class="alert-text">Profile Photo Not Updated</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                     <div class="text-center">
                         <h3>
                             {{ auth()->user()->name }}<span class="font-weight-light">, change your profile image</span>
                         </h3>
-                       
                     </div>
                 </div>
                 </div>
@@ -66,7 +92,7 @@
                             @method('put')
 
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
-                            
+
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('status') }}
@@ -123,7 +149,7 @@
                                 <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-current-password">{{ __('Current Password') }}</label>
                                     <input type="password" name="old_password" id="input-current-password" class="form-control form-control-alternative{{ $errors->has('old_password') ? ' is-invalid' : '' }}" placeholder="{{ __('Current Password') }}" value="" required>
-                                    
+
                                     @if ($errors->has('old_password'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('old_password') }}</strong>
@@ -133,7 +159,7 @@
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('New Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('New Password') }}" value="" required>
-                                    
+
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
@@ -154,7 +180,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

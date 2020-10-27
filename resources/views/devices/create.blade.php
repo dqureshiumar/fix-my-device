@@ -10,17 +10,61 @@
         <ul>
             <form action="{{ route('mydevice.store') }}" method="POST">
                 @csrf
-                <li><input type="checkbox" name="desktop" value="1" id="cb1" />
+                @if($empty == 1)
+                <li><input type="checkbox" name="desktop" value="1" id="cb1" @if($device[0]['desktop'] == 1) checked @endif />
                   <label for="cb1"><img src="icons/desktop.jpg" />Desktop</label>
                 </li>
-                <li><input type="checkbox" name="laptop" id="cb2" value="1" />
+                <li><input type="checkbox" name="laptop" id="cb2" value="1" @if($device[0]['laptop'] == 1) checked @endif />
                   <label for="cb2"><img src="icons/laptop.jpg" />Laptop</label>
                 </li>
-                <li><input type="checkbox" value="1" id="cb3" name="printer"/>
+                <li><input type="checkbox" value="1" id="cb3" name="printer" @if($device[0]['printer'] == 1) checked @endif/>
                   <label for="cb3"><img src="icons/printer.jpg" />Printer</label>
                 </li>
-                <li><input type="checkbox" value="1" name="wifi" id="cb4" />
+                <li><input type="checkbox" value="1" name="wifi" id="cb4" @if($device[0]['wifi'] == 1) checked @endif/>
                   <label for="cb4"><img src="icons/wifi.png" />Wifi</label>
+                </li>
+                <li><input type="checkbox" value="1" name="router" id="cb5" @if($device[0]['router'] == 1) checked @endif />
+                    <label for="cb5"><img src="icons/router.jpg" />Router</label>
+                </li>
+                <li><input type="checkbox" value="1" name="tablet" id="cb6" @if($device[0]['tablet'] == 1) checked @endif />
+                    <label for="cb6"><img src="icons/tablet.jpg" />Tablet</label>
+                </li>
+                <li><input type="checkbox" value="1" name="mobile" id="cb7" @if($device[0]['mobile'] == 1) checked @endif />
+                    <label for="cb7"><img src="icons/mobile.jpg "/>Mobile</label>
+                </li>
+                <li><input type="checkbox" value="1" name="server" id="cb8" @if($device[0]['server'] == 1) checked @endif />
+                    <label for="cb8"><img src="icons/server.png" />Server</label>
+                </li>
+                <li><input type="checkbox" value="1" name="firewall" id="cb9" @if($device[0]['firewall'] == 1) checked @endif />
+                    <label for="cb9"><img src="icons/firewall.jpg" />Firewall</label>
+                </li>
+                <li><input type="checkbox" value="1" name="storage" id="cb10" @if($device[0]['storage'] == 1) checked @endif />
+                    <label for="cb10"><img src="icons/storage.jpg" />Storage</label>
+                </li>
+                <li><input type="checkbox" value="1" name="ups" id="cb11" @if($device[0]['ups'] == 1) checked @endif />
+                    <label for="cb11"><img src="icons/ups.jpg" />UPS</label>
+                </li>
+                <li><input type="checkbox" value="1" name="ipphone" id="cb12" @if($device[0]['ipphone'] == 1) checked @endif />
+                    <label for="cb12"><img src="icons/ipphone.png" />IP Phone</label>
+                </li>
+                <li><input type="checkbox" value="1" name="switch" id="cb13" @if($device[0]['switch'] == 1) checked @endif />
+                    <label for="cb13"><img src="icons/switch.jpg" />Switch</label>
+                </li>
+                <li><input type="checkbox" value="1" name="other" id="cb14" @if($device[0]['other'] == 1) checked @endif />
+                    <label for="cb14"><img src="icons/other.png" />Other</label>
+                </li>
+                @else
+                <li><input type="checkbox" name="desktop" value="1" id="cb1" />
+                <label for="cb1"><img src="icons/desktop.jpg" />Desktop</label>
+                </li>
+                <li><input type="checkbox" name="laptop" id="cb2" value="1" />
+                <label for="cb2"><img src="icons/laptop.jpg" />Laptop</label>
+                </li>
+                <li><input type="checkbox" value="1" id="cb3" name="printer" />
+                <label for="cb3"><img src="icons/printer.jpg" />Printer</label>
+                </li>
+                <li><input type="checkbox" value="1" name="wifi" id="cb4" />
+                <label for="cb4"><img src="icons/wifi.png" />Wifi</label>
                 </li>
                 <li><input type="checkbox" value="1" name="router" id="cb5" />
                     <label for="cb5"><img src="icons/router.jpg" />Router</label>
@@ -52,6 +96,7 @@
                 <li><input type="checkbox" value="1" name="other" id="cb14" />
                     <label for="cb14"><img src="icons/other.png" />Other</label>
                 </li>
+                @endif
               </ul><br><br>
               <div align="center">
                 <button type="submit" class="btn btn-secondary"">Submit</button>

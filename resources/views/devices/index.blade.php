@@ -21,7 +21,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -32,7 +32,7 @@
                             </div>
                         @endif
                     </div>
-
+                @if($devicecount > 0 || auth()->user()->isAdmin == 1)
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
@@ -151,7 +151,7 @@
                                         @endif
                                     @endforeach
                                 @endif
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -163,7 +163,17 @@
                 </div>
             </div>
         </div>
-            
+        @else
+            <div class="container row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="alert alert-primary" role="alert" align="center">
+                        <strong>No Device Added!</strong>
+                    </div>
+                </div>
+            </div>
+        @endif
+
         @include('layouts.footers.auth')
     </div>
 @endsection

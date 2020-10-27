@@ -20,7 +20,7 @@ class DeviceController extends Controller
     {
         $devicecount = 0;
 
-        $devices = Device::all();
+        $devices = Device::where('userid', auth()->user()->id)->get();
         foreach($devices as $device){
             if($device->userid == auth()->user()->id){
                 if($device->desktop){

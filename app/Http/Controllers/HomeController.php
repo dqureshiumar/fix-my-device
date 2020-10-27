@@ -28,11 +28,13 @@ class HomeController extends Controller
         $ticketcount = count(Ticket::all());
         $users = User::all();
         $userauth = auth()->user();
+
         $userticketcount = count($userauth->Ticket);
 
         $devicecount = 0;
 
-        $devices = Device::all();
+        $devices = Device::where('userid', auth()->user()->id)->get();
+
         foreach($devices as $device){
             if($device->userid == auth()->user()->id){
                 if($device->desktop){
@@ -79,9 +81,9 @@ class HomeController extends Controller
                 }
             }
         }
-        return view('dashboard',['devicecount'=>$devicecount,'users'=>$users,'usercount'=>$usercount,'ticketcount'=>$ticketcount,'userticketcount'=>$userticketcount]);
+        return view('dashboard',['devicecount'=>$devicecount,'devices'=>$devices,'users'=>$users,'usercount'=>$usercount,'ticketcount'=>$ticketcount,'userticketcount'=>$userticketcount]);
     }
 
 
-    
+
 }

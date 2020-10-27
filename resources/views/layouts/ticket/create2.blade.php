@@ -6,7 +6,7 @@
         'title' => __('Hello') . ' '. auth()->user()->name,
         'description' => __('Add A new Ticket'),
         'class' => 'col-lg-7'
-    ])   
+    ])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -15,8 +15,8 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
-                                @if(auth()->user()->profile != NULL)
-                                    <img src="{{ asset('storage') }}/profile/{{ auth()->user()->profile }}" class="rounded-circle">
+                                @if(auth()->user()->avatar != NULL)
+                                    <img src="{{ auth()->user()->avatar }}" class="rounded-circle">
                                 @else
                                 <a href="#">
                                     <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" class="rounded-circle">
@@ -49,7 +49,7 @@
                             <h3>
                                 {{ auth()->user()->name }}<span class="font-weight-light">, change your profile image</span>
                             </h3>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                             @csrf
 
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
-                            
+
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('status') }}
@@ -99,7 +99,7 @@
                                 </div>
 
                             </div>
-                        
+
                         <hr class="my-4" />
                             <div class="pl-lg-4">
                                 <div class="form-group" id="devicetype">
@@ -183,7 +183,7 @@
 
                                         <input class="form-check-input" type="radio" name="address_accept" id="radio" >
                                         <label for="address_accept">To a new address</label>
-                                      
+
                                         <div class="reveal-if-active">
                                             <div class="form-group">
                                                 <label for="adresss">Address</label>
@@ -210,19 +210,19 @@
                                                 <div class="form-group">
                                                         <input type="submit" class="btn btn-success mt-4" value="Submit">
                                                 </div>
-    
+
                                             </div>
                                 </div>
                                 </div>
                             </div>
                         </form>
-<br><br><br><br><br>  <br><br><br><br><br>  <br><br><br><br><br>                        
+<br><br><br><br><br>  <br><br><br><br><br>  <br><br><br><br><br>
                     </div>
                 </div>
             </div>
         </div>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        
+
         @include('layouts.footers.auth')
     </div>
     <style>
@@ -246,7 +246,7 @@
         .switch{background-image:url(http://127.0.0.1:8000/icons/switch.jpg);}
         .other{background-image:url(http://127.0.0.1:8000/icons/other.png);}
 
-        
+
 
         .cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
         .cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
@@ -337,18 +337,18 @@
 
 <script>
 		var FormStuff = {
-		  
+
 		  init: function() {
 			this.applyConditionalRequired();
 			this.bindUIActions();
 		  },
-		  
+
 		  bindUIActions: function() {
 			$("input[type='radio'], input[type='checkbox']").on("change", this.applyConditionalRequired);
 		  },
-		  
+
 		  applyConditionalRequired: function() {
-			
+
 			$(".require-if-active").each(function() {
 			  var el = $(this);
 			  if ($(el.data("require-pair")).is(":checked")) {
@@ -357,9 +357,9 @@
 				el.prop("required", false);
 			  }
 			});
-			
+
 		  }
-		  
+
 		};
 
 		FormStuff.init();

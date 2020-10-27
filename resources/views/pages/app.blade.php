@@ -5,11 +5,11 @@
 <link rel="icon" href="images/favico.png" type="image/png">
 
 
-	
+
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<meta name="keywords" content="Flex Art Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	<meta name="keywords" content="Flex Art Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<script>
 		addEventListener("load", function () {
@@ -21,15 +21,15 @@
 		}
 	</script>
 	<!--// Meta tag Keywords -->
-    
+
 	<!-- banner slider css -->
 	<link href="css/minimal-slider.css" rel='stylesheet' type='text/css' />
 	<!-- //banner slider css -->
-	
+
 	<!-- css files -->
 	<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
     <link href="css/style6.css" rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
 	<link rel="stylesheet" href="css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
@@ -47,41 +47,41 @@
 	@include('pages.navbar.authuser')
 @endauth
 @guest
-	@include('pages.navbar.guest')	
+	@include('pages.navbar.guest')
 @endguest
 @yield('content')
 {{-- <section class="partners bg-light py-5">
 	<div class="container">
 		<div class="row partner-grids text-center">
 			<div class="col-md-2 col-4">
-				
+
 					<img src="images/img/bmw-infinity.png" alt="">
-				
+
 			</div>
 			<div class="col-md-2 col-4">
-				
+
 					<img src="images/img/logon.jpg" alt="">
-				
+
 			</div>
 			<div class="col-md-2 col-4">
-				
+
 					<img src="images/img/navnit.jpg" alt="">
-				
+
 			</div>
 			<div class="col-md-2 col-4 mt-md-0 mt-3">
-				
+
 					<img src="images/img/npr.png" alt="">
-				
+
 			</div>
 			<div class="col-md-2 col-4 mt-md-0 mt-3">
-				
+
 					<img src="images/img/PivotRoots_logo.png" alt="">
-				
+
 			</div>
 			<div class="col-md-2 col-4 mt-md-0 mt-3">
-				
+
 					<img src="images/img/logo.gif" alt="">
-				
+
 			</div>
 		</div>
 	</div>
@@ -183,16 +183,16 @@
 <!-- copyright -->
 <div class="cpy-right text-center">
 	<p>© <script>document.write(new Date().getFullYear())</script> Fix My Device. All rights reserved | Cooked With <i class="fa fa-heart" aria-hidden="true"></i>
-		by <a href="http://dqureshiumar001.000webhostapp.com" target="blank"> Umar Qureshi</a>
+		by <a href="http://dqureshiumar001.000webhostapp.com" target="blank"> TCET ka baccha log</a>
 	</p>
 </div>
 <script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+<script src="js/bootstrap.js"></script>
 <!-- //js -->
 <link rel="stylesheet" href="css/css/floating-wpp.css">
 <script type="text/javascript" src="css/css/floating-wpp.js"></script>
 <!-- search overlay -->
-<script src="js/modernizr-2.6.2.min.js"></script> 
+<script src="js/modernizr-2.6.2.min.js"></script>
 <!-- //search overlay -->
 
 <!--search jQuery-->
@@ -235,8 +235,8 @@
 <!-- //banner slider js -->
 
 <!-- Stats-Number-Scroller-Animation-JavaScript -->
-<script src="js/waypoints.min.js"></script> 
-<script src="js/counterup.min.js"></script> 
+<script src="js/waypoints.min.js"></script>
+<script src="js/counterup.min.js"></script>
 <script>
     jQuery(document).ready(function( $ ) {
         $('.counter').counterUp({
@@ -253,7 +253,7 @@
 <script src="js/easing.js"></script>
 <script>
     jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){		
+        $(".scroll").click(function(event){
             event.preventDefault();
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
@@ -267,12 +267,12 @@
             containerID: 'toTop', // fading element id
             containerHoverID: 'toTopHover', // fading element hover id
             scrollSpeed: 1200,
-            easingType: 'linear' 
+            easingType: 'linear'
             };
         */
-                            
+
         $().UItoTop({ easingType: 'easeOutQuart' });
-                            
+
         });
 </script>
 <!-- //here ends scrolling icon -->
@@ -280,7 +280,7 @@
 <script src="js/owl.carousel.js"></script>
 	<!-- //for testimonials slider-js-file-->
 	<script>
-	$(document).ready(function() { 
+	$(document).ready(function() {
 		$("#owl-demo").owlCarousel({
 
 			autoPlay: 3000, //Set AutoPlay to 3 seconds
@@ -289,7 +289,7 @@
 			itemsDesktop : [640,5],
 			itemsDesktopSmall : [414,4]
 		});
-	}); 
+	});
 	</script>
 </body>
 </html>

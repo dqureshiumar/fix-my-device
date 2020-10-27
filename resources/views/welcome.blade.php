@@ -37,7 +37,7 @@
 			   <p class="my-4">Fix My Device is the technology friend you always wanted to have in your contact list.</p>
 			   <div class="read">
 					<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Read More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
-				</div>				
+				</div>
 			</div>
 		</div>
 		{{-- <div class="slide slide2" style="width:200%;">
@@ -46,7 +46,7 @@
 			   <p class="my-4">You do not have to feel technologically lacking any more!</p>
 			   <div class="read">
 					<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Read More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
-				</div>	
+				</div>
 			</div>
 		</div> --}}
 		{{-- <div class="slide slide3">
@@ -55,7 +55,7 @@
 			   <p class="my-4">IT Gateway solves all your technology related issues - for your parents, your kids, for you or anybody in the family or your office.</p>
 			   <div class="read">
 					<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Read More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
-				</div>	
+				</div>
 			</div>
 		</div> --}}
 	{{-- </div> --}}
@@ -74,7 +74,7 @@
 
 
 <!-- end of main image slider container -->
-	
+
 <!-- welcome -->
 <section class="Welcome py-5">
 	<div class="container py-sm-5">
@@ -82,21 +82,21 @@
 			<div class="col-lg-6 mb-lg-0 mb-5">
 				<h3 class="mt-lg-4">What Fix My Device can do for you?</h3>
 				<p class="my-4">You do not have to feel technologically lacking any more!
-                    Fix My Device solves all your technology related issues - for your parents, your kids, for you or anybody in the family or your office.   
+                    Fix My Device solves all your technology related issues - for your parents, your kids, for you or anybody in the family or your office.
                    </p>
 				<p class="mb-4"> You never could give time to your parents/ family members to sort out their issues with YouTube, Hotstar/netflix, Whatsapp or Facebook, now Fix My Device is there for them at a call.</p>
 				<div class="read">
 					<a href="about">Click More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
-				</div>	
+				</div>
 			</div>
 			<div class="col-lg-3 col-md-4 col-6 pr-1 welcome-image">
 				<img src="images/a1.jpg" class="img-fluid" alt="" />
-			</div>	
+			</div>
 			<div class="col-lg-3 col-md-4 col-6 pl-1 welcome-image">
 				<img src="images/a2.jpg" class="img-fluid" alt="" />
 			</div>
-		</div>	
-	</div>	
+		</div>
+	</div>
 </section>
 <!-- welcome -->
 
@@ -105,7 +105,7 @@
 	<div class="bs-slider-overlay">
 		<div class="container">
 			<div class="welcome-bottom-grids row">
-				
+
 				<!-- Counter -->
 				<div class="col-lg-6 p-sm-5 p-4 welcome_left Features-bottom">
 					<div class="layer p-sm-5 p-4 welcome_left_inner agile-info">
@@ -115,7 +115,7 @@
 									<h3>Projects</h3>
 								</div>
 								<div class="counterinfo agile-info">
-									<p class="counter">436</p> 
+									<p class="counter">436</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -125,7 +125,7 @@
 									<h3>Awards Won</h3>
 								</div>
 								<div class="counterinfo agile-info">
-									<p class="counter">147</p> 
+									<p class="counter">147</p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -149,9 +149,9 @@
 						<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Click More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
 					</div>
 				</div>
-			</div>	
-		</div>	
-	</div>	
+			</div>
+		</div>
+	</div>
 </section>
 <!-- //welcome bottom -->
 
@@ -238,7 +238,7 @@
 					<p class="my-4">Technical skills are practical abilities and specialized knowledge needed to perform tasks in technical roles in IT, mechanics, engineering, science, finance, sales, etc. Technical skills include the abilities to use specialized software or operate specific machinery, equipment, and tools.</p>
 					<div class="bnr-button">
 						<button type="button" class="btn btn-primary play" data-toggle="modal" data-target="#exampleModal">
-							<i class="fas fa-play"></i> 
+							<i class="fas fa-play"></i>
 						</button> <span class="text-white ml-2">Watch Video </span>
 					</div>
 				</div>
@@ -279,7 +279,7 @@
 							<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 97%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
-                </div>				
+                </div>
 			</div>
 		</div>
 	</div>
@@ -290,7 +290,7 @@
 			<div class="heading pb-4">
 				<h3 class="heading mb-2 text-center"> <span>Join </span> Us </h3>
 				<p class="para mb-5 text-center">We Provide best Services for all your IT problems</p>
-			</div>	
+			</div>
 			<div class="row middle-grids">
 				<div class="col-lg-3 col-sm-6 about-in middle-grid-info text-center">
 					<div class="card">
@@ -352,7 +352,7 @@
 </div>
 <!-- //Skills -->
 
-<!-- team -->
+<!-- team
 <section id="myteam" class="team py-5">
 	<div class="container py-md-5">
 		<div class="heading pb-4">
@@ -390,7 +390,7 @@
 			</div>
 
 
-			
+
 			<!-- end team member -->
 			{{-- <div class="col-md-4 col-sm-6 team-wrap mt-sm-0 mt-5">
 				<div class="team-member text-center">
@@ -450,8 +450,8 @@
 			</div>
 			<!-- end team member -->
 		</div>
-	</div> --}}
-</section>
+	</div>
+</section>--}}
 <!-- //team -->
 
 <!-- brands -->
@@ -613,7 +613,7 @@
 			<div class="modal-body">
 				<img src="images/bg.jpg" class="img-fluid mb-3" alt="Modal Image" />
 				Register your issues with us and we will get back to you as you will raise an issue related to your device.
-				We also fix devices which malfunction and replace old devices with new devices under terms and conditions.	
+				We also fix devices which malfunction and replace old devices with new devices under terms and conditions.
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

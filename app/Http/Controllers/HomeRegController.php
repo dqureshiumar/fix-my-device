@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \Illuminate\Support\Facades\URL;
 use App\User;
+use App\Device;
 use Auth;
 use Mail;
 
@@ -52,7 +54,17 @@ class HomeRegController extends Controller
 
     public function adddevice()
     {
-        return view('devices.create');
+        $id = auth()->user()->id;
+        $device = Device::where('userid',$id)->get();
+        $empty = 0;
+        if(isset($device[0])){
+            $empty = 1;
+            return view('devices.create',['device'=> $device,'empty'=>$empty]);
+        }
+        else{
+            return view('devices.create',['device'=> $device,'empty'=>$empty]);
+        }
+
     }
     /**
      * Store a newly created resource in storage.
@@ -64,7 +76,7 @@ class HomeRegController extends Controller
     {
         $id = Auth::id();
         $user = User::find($id);
-        
+
         $user->contact = $request->input('contact');
         $user->address = $request->input('address');
         $user->state = $request->input('state');
@@ -123,6 +135,9 @@ class HomeRegController extends Controller
 
     public function profile_update(Request $request)
     {
+        $request->validate([
+            'filename' => 'mimes:jpeg,JPG,PNG,png,jpg,gif,svg|max:2048',
+        ]);
         if($request->hasFile('filename'))
         {
             // Get filename with the extension
@@ -135,18 +150,23 @@ class HomeRegController extends Controller
             $fileNameToStore= $filename.'_'.time().'.'.$extension;
             // Upload Image
             $path = $request->file('filename')->storeAs('public/profile', $fileNameToStore);
-            
-        } 
-        else 
+
+        }
+        else
         {
             $fileNameToStore = NULL;
         }
         $my_id = auth()->user()->id;
         $user = User::find($my_id);
-        
-        $user->profile = $fileNameToStore;
-        $user->save();
-        return redirect('/profile');
+
+        $user->avatar =  URL::asset('storage/profile').'/'.$fileNameToStore;
+        if($user->save()){
+            return redirect('/profile')->with('success','Profile Photo Updated');
+        }
+        else{
+            return redirect('/profile')->with('error','Failed to update the Profile picture');
+        }
+
     }
 
 
@@ -164,5 +184,5 @@ class HomeRegController extends Controller
         $user->save();
         return redirect('address');
     }
-    
+
 }

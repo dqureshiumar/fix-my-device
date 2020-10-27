@@ -20,8 +20,8 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                                @if(auth()->user()->profile != NULL)
-                                    <img src="{{ asset('storage') }}/profile/{{ auth()->user()->profile }}" >
+                                @if(auth()->user()->avatar != NULL)
+                                    <img src="{{auth()->user()->avatar}}" >
                                 @else
                                     <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" >
                                 @endif
