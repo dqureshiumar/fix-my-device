@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Subscribe extends Model
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+class Subscribe extends Eloquent
 {
     //
+    protected $connection = 'mongodb';
+    protected $collection = 'subscribes';
 }

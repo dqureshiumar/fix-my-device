@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-        
+
         $users = User::all();
         $usercount = count(User::all());
         $ticketcount = count(Ticket::all());
@@ -74,7 +74,7 @@ class UserController extends Controller
                 }
             }
         }
-        
+
         return view('users.index',['devicecount'=>$devicecount,'users'=>$users,'usercount'=>$usercount,'ticketcount'=>$ticketcount,'userticketcount'=>$userticketcount]);
     }
 
@@ -146,5 +146,5 @@ class UserController extends Controller
         return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));
     }
 
-    
+
 }

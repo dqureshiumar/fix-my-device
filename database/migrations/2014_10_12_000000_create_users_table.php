@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('isAdmin')->default(0);
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('google_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('contact')->nullable();
@@ -25,6 +26,8 @@ class CreateUsersTable extends Migration
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('pincode')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('avatar_original')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -4,19 +4,22 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Jenssegers\Mongodb\Eloquent\Model;
+use Jenssegers\Mongodb\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    protected $connection = 'mongodb';
+    protected $collection = 'users';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'isAdmin','password','contact','address','state','city','pincode','profile'
     ];
 
     /**
@@ -39,7 +42,7 @@ class User extends Authenticatable
 
     public function ticket(){
         return $this->hasMany('App\Ticket');
-    
+
     }
 }
 
