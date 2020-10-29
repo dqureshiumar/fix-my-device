@@ -73,7 +73,7 @@ class TicketController extends Controller
                 }
             }
         }
-        
+
         $usercount = count(User::all());
         $ticketcount = count(Ticket::all());
         $user_id = auth()->user();
@@ -110,11 +110,12 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $ticket = new Ticket;
         $ticket->user_id = auth()->user()->id;
         $ticket->problem = $request->input('problem');
         $ticket->device_name= $request->input('device_name');
+        $ticket->status = 'open';
         $ticket->new_address = $request->input('new_address');
         $ticket->new_state = $request->input('new_state');
         $ticket->new_city = $request->input('new_city');
@@ -125,7 +126,7 @@ class TicketController extends Controller
         $device= $request->input('device_name');
         $visit = $request->input('date_time');
 
-        
+
         $status = "Open";
         $data = array('name' => $to_name, "device" => $device, "visit" => $visit,"email" => $to_email,"status"=>$status);
         Mail::send('emails.ticket', $data, function($message) use ($to_name, $to_email) {
@@ -138,7 +139,7 @@ class TicketController extends Controller
             $message->to($to_email, $to_name)
             ->subject($to_name.', your Ticket has been successfully raised');
             $message->from('noreply@fixmydevice.xyz','Fix My Device');
-        }); 
+        });
         $ticket->save();
         return redirect('/home');
 
@@ -152,7 +153,7 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -179,7 +180,7 @@ class TicketController extends Controller
         $user->update(
             $request->merge(['status' => $status])
         );
-        $to_name = $user->ticket->name; 
+        $to_name = $user->ticket->name;
         $to_email = auth()->user()->email;
         // Mail::send(['text'=>'updatemail'],['name','IT GATEWAY SOLUTIONS'],function($message) use ($to_name, $to_email) {
         //     $message->to($to_email,$to_name)->subject('Your Ticket has been Closed');
@@ -204,7 +205,7 @@ class TicketController extends Controller
     {
         $ticket = Ticket::find($id);
         $ticket->delete();
-        return redirect('ticket');   
+        return redirect('ticket');
     }
 
     public function ticketclose($id)
